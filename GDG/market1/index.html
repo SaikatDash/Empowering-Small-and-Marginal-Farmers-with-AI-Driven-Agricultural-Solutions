@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiSathi - AI-Driven Agricultural Solutions</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #81c784;
+            --accent-color: #f9a825;
+            --light-bg: #f5f7fa;
+            --dark-text: #333;
+            --light-text: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            align-self: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgb(239, 236, 236);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--dark-text);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #f57f17;
+            transform: translateY(-2px);
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            color: #f4f1f1;
+        }
+        
+        /* Styling for input fields and button */
+        input, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        /* Button styling */
+        button {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #218838;
+        }
+        
+        /* Styling for response div */
+        #response {
+            margin-top: 20px;
+            padding: 15px;
+            background: url('fareming.jpg') center/cover no-repeat;
+            border-radius: 8px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        table, th, td {
+            border: 2px solid #ccc;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            color: var(--light-text);
+            padding: 4rem 0;
+            text-align: center;
+           
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-text);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        .btn-primary:hover {
+            background-color: #1b5e20;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light-text);
+            border: 2px solid var(--light-text);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            background-color: var(--secondary-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon i {
+            color: var(--light-text);
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 4rem 0;
+            background-color: #e8f5e9;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* App Preview Section */
+        .app-preview {
+            padding: 4rem 0;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .app-text {
+            flex: 1;
+        }
+
+        .app-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .app-text ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .app-text li {
+            margin-bottom: 0.5rem;
+        }
+
+        .app-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .app-img img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 0;
+            background-color: #e8f5e9;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 4rem 0;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Registration Form */
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #1b5e20;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: var(--light-text);
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--light-text);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .app-preview {
+                flex-direction: column;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }    
+        /* Weather Widget Styles */
+        .weather-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .weather-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .weather-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .weather-main {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .weather-temp {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .weather-icon {
+            width: 80px;
+            height: 80px;
+        }
+
+        .weather-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .weather-detail {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.8rem;
+            background-color: #f5f7fa;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .detail-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 0.3rem;
+        }
+
+        /* Crop Recommendation Styles */
+        .recommendation-form {
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .crop-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .crop-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .crop-detail {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f5f7fa;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Weather Forecast Section */
+        .forecast-container {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .forecast-day {
+            min-width: 100px;
+            background-color: #f5f7fa;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .forecast-date {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .forecast-temp {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        .cont {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <h1>Krishi<span>Sathi</span></h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#contact" class="cta-button">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Empowering Small and Marginal Farmers with AI-Driven Solutions</h2>
+            <p>Harness the power of artificial intelligence, machine learning, and IoT technologies to make informed decisions, improve crop yields, and build resilience against climate challenges.</p>
+            <div class="hero-buttons">
+                <a href="#dashboard" class="btn btn-primary">Try Dashboard</a>
+                <a href="#contact" class="btn btn-secondary">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Smart Farming Solutions</h2>
+                <p>KrishiSathi offers comprehensive AI-powered solutions designed specifically for small and marginal farmers facing unique challenges.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🌤️</i>
+                    </div>
+                    <h3>Weather Predictions</h3>
+                    <p>Hyperlocal weather forecasts with 95% accuracy to help you plan farming activities and protect crops from extreme weather events.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🌱</i>
+                    </div>
+                    <h3>Crop Recommendations</h3>
+                    <p>AI-driven crop suggestions based on soil conditions, climate patterns, and market trends to maximize your yields and profits.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>📊</i>
+                    </div>
+                    <h3>Soil Analysis</h3>
+                    <p>Remote sensing and on-ground data analysis to monitor soil health, nutrient levels, and recommend sustainable farming practices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>🐛</i>
+                    </div>
+                    <h3>Disease Detection</h3>
+                    <p>Early identification of crop diseases and pests through image recognition technology, helping prevent crop losses.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>💧</i>
+                    </div>
+                    <h3>Water Management</h3>
+                    <p>Smart irrigation recommendations based on soil moisture, crop requirements, and weather forecasts to optimize water usage.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i>📱</i>
+                    </div>
+                    <h3>Voice Assistance</h3>
+                    <p>Access all information in your local language through voice commands, making technology accessible to all farmers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How KrishiSathi Works</h2>
+                <p>Our simple four-step process helps you implement smart farming techniques without complexity.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Register Your Farm</h3>
+                        <p>Sign up for KrishiSathi and provide basic details about your farm location, size, and current crops. You can register through our mobile app, website, or with the help of a local KrishiSathi representative.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Connect Soil Sensors (Optional)</h3>
+                        <p>For enhanced precision, you can install our affordable IoT soil sensors that measure moisture levels, temperature, and nutrient content. Don't worry—our system works even without sensors by using satellite data.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Receive Personalized Recommendations</h3>
+                        <p>Our AI analyzes your farm's data along with climate patterns, soil conditions, and market trends to provide you with personalized recommendations for crop selection, irrigation scheduling, fertilizer application, and disease prevention.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Implement and Track Progress</h3>
+                        <p>Follow the recommendations and track your farm's progress through our easy-to-use dashboard. The system continuously learns from your feedback and results to improve future recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section class="app-preview">
+        <div class="container">
+            <div class="app-text">
+                <h2>AI-Powered Dashboard for Smart Decision Making</h2>
+                <p>Our intuitive dashboard provides all the information you need to make informed farming decisions at your fingertips.</p>
+                <ul>
+                    <li><strong>Real-time Weather Updates:</strong> Get hyperlocal weather predictions specific to your farm location.</li>
+                    <li><strong>Crop Calendar:</strong> View personalized planting, irrigation, and harvesting schedules.</li>
+                    <li><strong>Early Warnings:</strong> Receive alerts for potential pest outbreaks, disease risks, or extreme weather events.</li>
+                    <li><strong>Resource Optimization:</strong> Get recommendations for optimal water and fertilizer usage based on crop needs and soil conditions.</li>
+                    <li><strong>Market Intelligence:</strong> Access current market prices and trends to help you decide when to sell your produce.</li>
+                </ul>
+                <a href="#dashboard" class="btn btn-primary">Explore Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Demo Section -->
+    <section id="dashboard" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Interactive Dashboard</h2>
+                <p>Experience our AI-powered agricultural advisory system in action with this interactive demo.</p>
+            </div>
+
+            <!-- Weather Widget -->
+            <h3>Weather Forecast for Siddharthnagar, UP</h3>
+            <div class="weather-widget">
+                <div class="weather-header">
+                    <div class="weather-location">
+                        <span>📍</span>
+                        <h3>Siddharthnagar</h3>
+                    </div>
+                    <p id="current-date">Loading...</p>
+                </div>
+                <div class="weather-main">
+                    <div>
+                        <div class="weather-temp">28°C</div>
+                        <p>Partly Cloudy</p>
+                    </div>
+                    <div class="weather-icon">☁️</div>
+                </div>
+                <div class="weather-details">
+                    <div class="weather-detail">
+                        <span>Humidity</span>
+                        <div class="detail-value">68%</div>
+                    </div>
+                    <div class="weather-detail">
+                        <span>Wind</span>
+                        <div class="detail-value">12 km/h</div>
+                    </div>
+                    <div class="weather-detail">
+                        <span>Rainfall</span>
+                        <div class="detail-value">30%</div>
+                    </div>
+                    <div class="weather-detail">
+                        <span>UV Index</span>
+                        <div class="detail-value">Medium</div>
+                    </div>
+                </div>
+                <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">5-Day Forecast</h4>
+                <div class="forecast-container">
+                    <div class="forecast-day">
+                        <div class="forecast-date">Apr 5</div>
+                        <div>☀️</div>
+                        <div class="forecast-temp">31°C</div>
+                        <div>Sunny</div>
+                    </div>
+                    <div class="forecast-day">
+                        <div class="forecast-date">Apr 6</div>
+                        <div>⛅</div>
+                        <div class="forecast-temp">30°C</div>
+                        <div>Cloudy</div>
+                    </div>
+                    <div class="forecast-day">
+                        <div class="forecast-date">Apr 7</div>
+                        <div>🌧️</div>
+                        <div class="forecast-temp">27°C</div>
+                        <div>Rain</div>
+                    </div>
+                    <div class="forecast-day">
+                        <div class="forecast-date">Apr 8</div>
+                        <div>🌧️</div>
+                        <div class="forecast-temp">26°C</div>
+                        <div>Rain</div>
+                    </div>
+                    <div class="forecast-day">
+                        <div class="forecast-date">Apr 9</div>
+                        <div>⛅</div>
+                        <div class="forecast-temp">28°C</div>
+                        <div>Cloudy</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crop Recommendation Tool -->
+            <h3>AI Crop Recommendation</h3>
+            <div class="recommendation-form">
+                <p>Enter your soil and farm details to get AI-powered crop recommendations:</p>
+                <form id="cropForm">
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="soilType">Soil Type</label>
+                            <select id="soilType" required>
+                                <option value="">Select Soil Type</option>
+                                <option value="clay">Clay</option>
+                                <option value="sandy">Sandy</option>
+                                <option value="loamy">Loamy</option>
+                                <option value="black">Black</option>
+                                <option value="red">Red</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="irrigationAccess">Irrigation Access</label>
+                            <select id="irrigationAccess" required>
+                                <option value="">Select Option</option>
+                                <option value="full">Full (Year-round)</option>
+                                <option value="partial">Partial (Seasonal)</option>
+                                <option value="rainfed">Rainfed Only</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="farmSize">Farm Size (in Acres)</label>
+                            <input type="number" id="farmSize" min="0.1" step="0.1" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="season">Current Season</label>
+                            <select id="season" required>
+                                <option value="">Select Season</option>
+                                <option value="kharif">Kharif (Monsoon)</option>
+                                <option value="rabi">Rabi (Winter)</option>
+                                <option value="zaid">Zaid (Summer)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" id="analyzeSoil" class="submit-btn">Get Crop Recommendations</button>
+                </form>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing your farm data and generating recommendations...</p>
+                </div>
+                
+                <div class="result-card" id="resultCard">
+                    <div class="result-header">
+                        <h3>Recommended Crop: <span id="cropName">Rice (Paddy)</span></h3>
+                        <div class="crop-image">
+                            <img src="/api/placeholder/100/100" alt="Crop Image" width="100%">
+                        </div>
+                    </div>
+                    <p>Based on your soil type, climate conditions, and available resources, our AI system recommends:</p>
+                    <div class="crop-details">
+                        <div class="crop-detail">
+                            <h4>Water Requirements</h4>
+                            <p>Medium-high (Regular irrigation needed during growth phase)</p>
+                        </div>
+                        <div class="crop-detail">
+                            <h4>Growing Period</h4>
+                            <p>90-120 days</p>
+                        </div>
+                        <div class="crop-detail">
+                            <h4>Expected Yield</h4>
+                            <p>3.5-4.2 tons per acre under optimal conditions</p>
+                        </div>
+                        <div class="crop-detail">
+                            <h4>Market Potential</h4>
+                            <p>High demand in local markets with stable pricing</p>
+                        </div>
+                    </div>
+                    <h4 style="margin-top: 1.5rem;">Key Management Practices:</h4>
+                    <ul>
+                        <li>Prepare seedbeds 3-4 weeks before transplanting</li>
+                        <li>Maintain water level of 2-5 cm during vegetative growth</li>
+                        <li>Apply NPK fertilizer in split doses (40:20:20 kg/acre)</li>
+                        <li>Monitor for rice blast and stem borer regularly</li>
+                    </ul>
+                    <h4 style="margin-top: 1rem;">Alternative Recommendations:</h4>
+                    <p>Wheat, Maize, or Pulses depending on your preference and market conditions</p>
+                </div>
+            </div>
+            
+            <!-- Disease Detection Tool -->
+            <h3 style="margin-top: 3rem;">AI Disease Detection</h3>
+            <div class="form-container">
+                <p>Upload a photo of your crop leaf to identify diseases and get treatment recommendations:</p>
+                <form id="diseaseForm">
+                    <div class="form-group">
+                        <label for="cropType">Crop Type</label>
+                        <select id="cropType" required>
+                            <option value="">Select Crop Type</option>
+                            <option value="rice">Rice (Paddy)</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="maize">Maize</option>
+                            <option value="pulses">Pulses</option>
+                            <option value="vegetables">Vegetables</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUpload">Upload Leaf Image</label>
+                        <input type="file" id="imageUpload" accept="image/*">
+                    </div>
+                    <button type="button" id="analyzeImage" class="submit-btn">Detect Disease</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="cont">
+            <h2>Soil Data Input</h2>
+            <input type="number" id="ph" placeholder="Soil pH Level" step="0.1">
+            <input type="number" id="moisture" placeholder="Moisture Level (%)">
+            <input type="number" id="nitrogen" placeholder="Nitrogen Content (mg/kg)">
+            <input type="number" id="phosphorus" placeholder="Phosphorus Content (mg/kg)">
+            <input type="number" id="potassium" placeholder="Potassium Content (mg/kg)">
+            <button onclick="fetchSoilData()">Get Soil Analysis</button>
+            <div id="response"></div>
+        </div>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+            h2 {
+                margin-bottom: 20px;
+                font-size: 22px;
+                color: #060606;
+            }
+            .cont {
+                width: 500%;
+                max-width: 500px;
+                background: white;
+                padding: 2rem;
+                border-radius: 10px;
+                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+                text-align: center;
+                align-self: center;
+                content: center;
+                margin: 0 auto;
+            }
+
+            .cont input {
+                width: calc(100% - 20px);
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+
+            .cont button {
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .cont button:hover {
+                background-color: #45a049;
+            }
+
+            #response {
+                margin-top: 20px;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                align-self: center;
+            }
+        </style>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>See how farmers across India are transforming their agricultural practices with KrishiSathi.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Before using KrishiSathi, I struggled with unpredictable weather and crop diseases. Now, with accurate forecasts and early disease detection, my wheat yield has increased by 30% and I've cut down on unnecessary pesticide use."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="farm1.avif" alt="Rajesh Patel" height="100" width="100">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajesh Patel</h4>
+                            <p>Small Farmer, Balrampur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The voice assistance feature in my local dialect made all the difference. I don't need to read or write to access valuable farming information. The irrigation recommendations have helped me save water and money."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="farm2.jpg" alt="Sunita Devi" height="100" width="100">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sunita Devi</h4>
+                            <p>Marginal Farmer, Siddharthnagar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The crop recommendation system suggested I try growing pulses alongside my traditional crops. This not only improved my soil health but also gave me an additional income source during what used to be our lean period."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="farm3.avif" alt="Vikram Singh" height="100" width="100">
+                        </div>
+                        <div class="author-info">
+                            <h4>Vikram Singh</h4>
+                            <p>Small Farmer, Gorakhpur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Join Thousands of Farmers Building Resilient Farms</h2>
+            <p>Register now to get personalized agricultural recommendations for your farm. Our team will help you get started with the KrishiSathi platform.</p>
+            <div class="form-container">
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="village">Village/Town</label>
+                        <input type="text" id="village" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="district">District</label>
+                        <select id="district" required>
+                            <option value="">Select District</option>
+                            <option value="siddharthnagar">Siddharthnagar</option>
+                            <option value="balrampur">Balrampur</option>
+                            <option value="gorakhpur">Gorakhpur</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="farmSize">Farm Size (in Acres)</label>
+                        <input type="number" id="registrationFarmSize" min="0.1" step="0.1" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">Krishi<span>Sathi</span></div>
+                    <p>Empowering small and marginal farmers with AI-driven agricultural solutions to improve productivity, resilience, and sustainability.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><img src="face.webp" alt="icon" style="width: 32px; height: 32px;"></a>
+                        <a href="#" class="social-icon"><img src="twitter.png" alt="icon" style="width: 60px; height: 32px;"></a>
+                        <a href="#" class="social-icon"><img src="linkedin.png" alt="icon" style="width: 32px; height: 32px;"></a>
+                        <a href="#" class="social-icon"><img src="insta.webp" alt="icon" style="width: 32px; height: 32px;"></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Farming Tips</a></li>
+                        <li><a href="#">Weather Alerts</a></li>
+                        <li><a href="#">Crop Calendar</a></li>
+                        <li><a href="#">Market Prices</a></li>
+                        <li><a href="#">Government Schemes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>KrishiSathi Technologies</p>
+                    <p>Email: info@krishisathi.org</p>
+                    <p>Phone: +91 9876543210</p>
+                    <p>Toll-Free: 1800-123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KrishiSathi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function fetchSoilData() {
+            const ph = document.getElementById("ph").value;
+            const moisture = document.getElementById("moisture").value;
+            const nitrogen = document.getElementById("nitrogen").value;
+            const phosphorus = document.getElementById("phosphorus").value;
+            const potassium = document.getElementById("potassium").value;
+            
+            if (!ph || !moisture || !nitrogen || !phosphorus || !potassium) {
+                document.getElementById("response").innerHTML = "<p style='color: red;'>Please enter all values.</p>";
+                return;
+            }
+
+            const nitrogenDeficiency = nitrogen < 50 ? (50 - nitrogen) * 2 * 0.453592 : 0;
+            const phosphorusDeficiency = phosphorus < 30 ? (30 - phosphorus) * 1.5 * 0.453592 : 0;
+            const potassiumDeficiency = potassium < 40 ? (40 - potassium) * 1.8 * 0.453592 : 0;
+
+            const nitrogenPercent = nitrogen < 50 ? ((50 - nitrogen) / 50) * 100 : 0;
+            const phosphorusPercent = phosphorus < 30 ? ((30 - phosphorus) / 30) * 100 : 0;
+            const potassiumPercent = potassium < 40 ? ((40 - potassium) / 40) * 100 : 0;
+
+            const response = `
+            <h3>Soil Analysis</h3>
+            <table>
+                <tr><th>Parameter</th><th>Value</th></tr>
+                <tr><td>pH Level</td><td>${ph}</td></tr>
+                <tr><td>Moisture Level</td><td>${moisture}%</td></tr>
+                <tr><td>Nitrogen Content</td><td>${nitrogen} mg/kg</td></tr>
+                <tr><td>Phosphorus Content</td><td>${phosphorus} mg/kg</td></tr>
+                <tr><td>Potassium Content</td><td>${potassium} mg/kg</td></tr>
+            </table>
+            <h3>Recommendations</h3>
+            <table>
+                <tr><th>Parameter</th><th>Recommendation</th></tr>
+                <tr><td>Soil pH</td><td>${ph < 6.5 ? "Add lime to increase pH." : "Soil pH is optimal."}</td></tr>
+                <tr><td>Nitrogen</td><td>${nitrogen < 50 ? `Apply ${nitrogenDeficiency.toFixed(1)} kg of nitrogen fertilizer per acre (${nitrogenPercent.toFixed(1)}% deficiency).` : "Nitrogen levels are adequate."}</td></tr>
+                <tr><td>Phosphorus</td><td>${phosphorus < 30 ? `Apply ${phosphorusDeficiency.toFixed(1)} kg of phosphorus fertilizer per acre (${phosphorusPercent.toFixed(1)}% deficiency).` : "Phosphorus levels are adequate."}</td></tr>
+                <tr><td>Potassium</td><td>${potassium < 40 ? `Apply ${potassiumDeficiency.toFixed(1)} kg of potassium fertilizer per acre (${potassiumPercent.toFixed(1)}% deficiency).` : "Potassium levels are adequate."}</td></tr>
+            </table>
+        `;
+            
+            document.getElementById("response").innerHTML = response;
+        }
+        // JavaScript for interactive functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Current Date
+            const today = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = today.toLocaleDateString('en-US', options);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Crop Recommendation Form
+            const analyzeSoilBtn = document.getElementById('analyzeSoil');
+            const loadingDiv = document.getElementById('loading');
+            const resultCard = document.getElementById('resultCard');
+            
+            analyzeSoilBtn.addEventListener('click', function() {
+                const soilType = document.getElementById('soilType').value;
+                const irrigationAccess = document.getElementById('irrigationAccess').value;
+                const farmSize = document.getElementById('farmSize').value;
+                const season = document.getElementById('season').value;
+                
+                // Form validation
+                if (!soilType || !irrigationAccess || !farmSize || !season) {
+                    alert('Please fill in all fields to get accurate recommendations.');
+                    return;
+                }
+                
+                // Show loading
+                loadingDiv.style.display = 'block';
+                resultCard.style.display = 'none';
+                
+                // Simulate API call with setTimeout
+                setTimeout(function() {
+                    // Hide loading and show results
+                    loadingDiv.style.display = 'none';
+                    resultCard.style.display = 'block';
+                    
+                    // Update recommendation based on inputs
+                    // This is a simplified demo - in a real application, this would come from AI backend
+                    let cropName;
+                    if (season === 'kharif') {
+                        if (soilType === 'loamy' || soilType === 'clay') {
+                            cropName = 'Rice (Paddy)';
+                        } else {
+                            cropName = 'Maize';
+                        }
+                    } else if (season === 'rabi') {
+                        cropName = 'Wheat';
+                    } else {
+                        cropName = 'Green Gram (Moong)';
+                    }
+                    
+                    document.getElementById('cropName').textContent = cropName;
+                }, 2000);
+            });
+            
+            // Disease Detection Form
+            const analyzeImageBtn = document.getElementById('analyzeImage');
+            
+            analyzeImageBtn.addEventListener('click', function() {
+                const cropType = document.getElementById('cropType').value;
+                const imageFile = document.getElementById('imageUpload').files[0];
+                
+                if (!cropType) {
+                    alert('Please select a crop type.');
+                    return;
+                }
+                
+                if (!imageFile) {
+                    alert('Please upload an image of the affected plant leaf.');
+                    return;
+                }
+                
+                alert('Image uploaded successfully! Our AI is analyzing your crop image. Results would typically be displayed here in a real application.');
+            });
+            
+            // Registration Form
+            const registrationForm = document.getElementById('registrationForm');
+            
+            registrationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const village = document.getElementById('village').value;
+                const district = document.getElementById('district').value;
+                const farmSize = document.getElementById('registrationFarmSize').value;
+                
+                if (!name || !phone || !village || !district || !farmSize) {
+                    alert('Please fill in all registration fields.');
+                    return;
+                }
+                
+                alert('Thank you for registering with KrishiSathi! Our team will contact you soon to help you get started with our AI-powered agricultural advisory system.');
+                registrationForm.reset();
+            });
+            
+            // Weather Data Simulation
+            // In a real application, this would fetch from a weather API based on location
+            
+            // Simulating weather updates every few seconds
+            function updateWeather() {
+                const weatherTemp = document.querySelector('.weather-temp');
+                const currentTemp = parseInt(weatherTemp.textContent);
+                const randomChange = Math.random() > 0.5 ? 1 : -1;
+                
+                if (currentTemp + randomChange >= 25 && currentTemp + randomChange <= 32) {
+                    weatherTemp.textContent = (currentTemp + randomChange) + '°C';
+                }
+                
+                setTimeout(updateWeather, 30000);
+            }
+            
+            updateWeather();
+        });
+    </script>
+</body>
+</html>
